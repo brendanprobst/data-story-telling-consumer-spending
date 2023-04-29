@@ -22,13 +22,13 @@ corrSavingsA2000 = merged_df_savings_after2000['PSAVERT'].corr(merged_df_savings
 
 color_scale = px.colors.sequential.Inferno
 # Create a scatter plot with the two columns and the calculated correlation as the title
-fig1 = px.scatter(merged_df_GDP, x='GDP', y='PCE', color='Year',
+fig1 = px.scatter(merged_df_GDP, x='GDP', y='PCE', color='DATE',
                  title=f"Correlation between Consumer Spending & GDP: {corrGDP}",
                  labels={'GDP': 'Gross Domestic Product', 'PCE': 'Personal Consumption Expenditures', 'DATE': 'Year'},
                  template="plotly_dark"
 
                   )
-fig2 = px.scatter(merged_df_Savings, x='PSAVERT', y='PCE', color='Year',
+fig2 = px.scatter(merged_df_Savings, x='PSAVERT', y='PCE', color='DATE',
                  title=f"Correlation between Consumer Spending and Personal Savings Rate: {corrSavings}",
                  labels={'PSAVERT': 'Personal Savings Rate', 'PCE': 'Personal Consumption Expenditures', 'DATE': 'Year'},
                  template="plotly_dark"
@@ -46,7 +46,7 @@ fig4 = px.scatter(merged_df_savings_after2000, x='PSAVERT', y='PCE', color='Year
                  template="plotly_dark"
                   )
 # Show the plot
-fig1.show()
-# fig2.show()
+# fig1.show()
+fig2.show()
 # fig3.show()
 # fig4.show()
